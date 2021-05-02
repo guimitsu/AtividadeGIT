@@ -12,5 +12,7 @@ Implementamos a solução em Dart/Flutter
 ########################################################################################################
 
 Autores:
+
 Guilherme Mitsuharu Iassuoka Shigematu
+
 Diogo Antonio Oliveira de Melo
