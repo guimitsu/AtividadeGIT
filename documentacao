@@ -39,8 +39,45 @@ Atividade de negócio
 ====================
 Calcular perímetro da circunferência.
 Calcular perímetro do retângulo.
+Calcular área da circunferência.
+Calcular área do retângulo.
 
 Processo de negócio
 ===================
-Calcular perímetro da circunferência: O aluno deve inserir os dados para cálculo da área (PI*r^2) e os dados para cálculo da perímetro (PI*r^2)
-Calcular perímetro do retângulo: O aluno deve inserir os dados para cálculo da área (BASE*ALTURA) e os dados para cálculo da perímetro 2(BASE+ALTURA)
+P1 - Calcular perímetro da circunferência: O aluno deve utilizar o valor do diâmetro da figura para realizar o cálculo do perímetro utilizando a seguinte fórmula:
+P = D * pi
+
+P = perímetro
+D = diâmetro
+pi = 3.1415
+
+P2 - Calcular a área da circunferência: O aluno deve utilizar o valor do diâmetro da figura para realizar o cálculo da área utilizando a seguinte fórmula:
+A = (D²/4) * pi
+
+A = área
+D = diâmetro
+pi = 3.1415
+
+P3 - Calcular perímetro do retângulo: O aluno deve utilizar os valores da altura e largura da figura para realizar o cálculo do perímetro utilizando a seguinte fórmula:
+P = (h + l) * 2
+
+P = perímetro
+h = altura
+l = largura 
+
+P3 - Calcular área do retângulo: O aluno deve utilizar os valores da altura e largura da figura para realizar o cálculo da área utilizando a seguinte fórmula:
+A = h * l
+
+A = área
+h = altura
+l = largura
+
+
+Requisitos
+=========================
+
+R1 - O sistema deverá solicitar o valor do diâmetro em cm para realizar os cálculos referentes à circunferência;
+
+R2 - O sistema deverá solicitar o valor da altura e da largura em cm para realizar os cálculos referente ao retângulo;
+
+R3 - O sistema deverá separar as funções em seções diferentes para cada cálculo e cada figura geométrica;
