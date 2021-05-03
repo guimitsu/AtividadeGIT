@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 void main() {
   runApp(AppWidget());
@@ -55,7 +56,74 @@ class CirculoFuncoes extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             ElevatedButton(onPressed: () {}, child: Text('Área')),
-            ElevatedButton(onPressed: () {}, child: Text('Perímetro')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return CirculoPerimetro();
+                  }));
+                },
+                child: Text('Perímetro')),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class CirculoPerimetro extends StatefulWidget {
+  @override
+  _CirculoPerimetroState createState() => _CirculoPerimetroState();
+}
+
+class _CirculoPerimetroState extends State<CirculoPerimetro> {
+  final TextEditingController _diametro = TextEditingController();
+  double _perimetro = 0;
+  String _resultado = '0';
+
+  void _calcularPerimetro() {
+    setState(() {
+      _perimetro = (double.tryParse(_diametro.text) * 2 * pi);
+      if (_perimetro == null) {
+        _resultado = '0';
+      } else {
+        _resultado = _perimetro.toStringAsPrecision(4);
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Círculo - Perímetro'),
+      ),
+      body: Container(
+        alignment: Alignment.center,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Card(
+              child: ListTile(
+                title: Text('Diâmetro em cm:'),
+                subtitle: TextField(
+                  controller: _diametro,
+                  decoration: InputDecoration(hintText: '00.00'),
+                  keyboardType: TextInputType.number,
+                ),
+              ),
+            ),
+            Card(
+              child: ListTile(
+                title: Text('Perímetro:'),
+                subtitle: Text('$_resultado cm'),
+              ),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  _calcularPerimetro();
+                },
+                child: Text('Calcular')),
           ],
         ),
       ),
